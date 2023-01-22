@@ -1,0 +1,176 @@
+<mvc:View
+    xmlns:semantic="sap.m.semantic"
+    controllerName="splitcontainer.splitcontainerproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+>
+    <Page id="page" titleAlignment="Center" title="{i18n>title}" xmlns:tnt="sap.tnt">
+        <content>
+            <SplitContainer id="SplitContDemo">
+                <detailPages>
+                    <Page id="detail1" title="Detail 1 Page" titleAlignment="Center">
+                        <!-- <Toolbar>
+                            <Button icon="sap-icon://sort" press=".onSortButtonPressed" />
+                        </Toolbar> -->
+                        <ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+                            <Table id="Tab" TableHeader="Student Table" width="100rem" inset="false" items="{model1>/stud}" sticky="ColumnHeaders,HeaderToolbar" alternateRowColors="true">
+                                <columns>
+                                    <Column width="8rem">
+                                        <Text text="Student Name" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Reg No." />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Roll No" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Age" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Email" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Father's Name" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Nationality" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Gender" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Mobile" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="State" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Country" />
+                                    </Column>
+
+                                    <Column width="8rem">
+                                        <Text text="Hobbies" />
+                                    </Column>
+
+                                    <Column width="10rem">
+                                        <Text text="Action" />
+                                    </Column>
+                                </columns>
+
+                                <items>
+                                    <ColumnListItem id="col1" highlight="{=${model1>age} >20 ? 'Success' : 'Error'}" press="onRowClick">
+                                        <cells>
+                                            <Text text="{model1>studname}" />
+                                            <Button text="{model1>regno}" type="Emphasized" press="onClick" />
+                                            <!-- <Text text="{model1>regno}" /> -->
+
+                                            <tnt:InfoLabel text="{model1>rollno}" displayOnly="false" colorScheme="{
+							parts: [
+								{path: 'model1>rollno'}
+							],
+							formatter: '.formatter.color1'
+						}" />
+                                            <!-- <Text text="{model1>rollno}" />  -->
+                                            <!-- <Text text="{model1>age}" /> -->
+
+                                            <Input value="{model1>age}" editable="true" />
+
+                                            <Text text="{model1>email}" />
+                                            <Text text="{model1>fname}" />
+                                            <Text text="{model1>nationality}" />
+                                            <!--   <Text text="{model1>gender}" />  -->
+
+                                            <ObjectNumber number="{model1>gender}" state="{parts: [
+								{path: 'model1>gender'}
+							],
+							formatter: '.formatter.gendername'
+						}" />
+                                            <!-- <tnt:InfoLabel desc = "{=${model1>gender} === 'Female' ? 'Success' : 'Error'}"></tnt:InfoLabel> -->
+                                            <Text text="{model1>mobile}" />
+                                            <Text text="{model1>state}" />
+                                            <Text text="{model1>country}" />
+                                            <Text text="{model1>hobbies}" />
+
+                                            <HBox>
+                                                <Button icon="sap-icon://edit" text="Edit" press="handleEdit" />
+                                            </HBox>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </ScrollContainer>
+                    </Page>
+
+                    <Page id="detail2" title="Detail 2 page" titleAlignment="Center" backgroundDesign="Solid" showNavButton="true" navButtonPress=".onPressDetailBack">
+                        <f:SimpleForm title="College Details Form:">
+                            <f:content>
+                                <Label text="College Name" />
+                                <Input value="{model2>/College1/1/collegename}" width="45%" />
+
+                                <Label text="College Id" />
+                                <Input value="{model2>/College1/1/collegeid}" width="45%" />
+
+                                <Label text="Deparments" />
+                                <!-- <Input value="{model2>/College1/1/dept}" width="45%" /> -->
+                                <Select width="45%">
+                                    <items>
+                                        <core:Item text="BTECH" />
+                                        <core:Item text="BCA" />
+                                        <core:Item text="MCA" />
+                                    </items>
+                                </Select>
+
+                                <Label text="Library" />
+                                <Input value="{model2>/College1/1/library}" width="45%" />
+
+                                <Label text="Attendance" />
+                                <Input value="{model2>/College1/1/attendance}" width="45%" />
+
+                                <Label text="Courses" />
+                                <!-- <Input value="{model2>/College1/1/courses}" width="45%" /> -->
+                                <Select width="45%">
+                                    <items>
+                                        <core:Item text="UG" />
+                                        <core:Item text="PG" />
+                                    </items>
+                                </Select>
+                            </f:content>
+                        </f:SimpleForm>
+                    </Page>
+                </detailPages>
+
+                <masterPages>
+                    <Page id="master" title="Master Page" titleAlignment="Center">
+                        <List headerText="Students detail" items="{model1>/stud}">
+                            <ObjectListItem title="{model1>studname}" number="{model1>age}" intro="{model1>email}" numberState="{=${model1>age} >20 ? 'Success' : 'Error'}" type="Navigation" press="onPressList" />
+                        </List>
+                    </Page>
+
+                    <Page id="master2" title="Master 2 Page" backgroundDesign="List" showNavButton="true" navButtonPress=".onPressMasterBack">
+                        <List itemPress=".onListItemPress">
+                            <StandardListItem title="To Student Detail " type="Active" custom:to="detail1" />
+                            <StandardListItem title="To College Detail " type="Active" custom:to="detail2" />
+                            <!--		<StandardListItem title="To Detail 3" type="Active" custom:to="detail2" /> -->
+                        </List>
+                    </Page>
+                </masterPages>
+            </SplitContainer>
+        </content>
+    </Page>
+</mvc:View>

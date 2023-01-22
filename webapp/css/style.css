@@ -1,0 +1,27 @@
+/* Enter your custom styles here */
+.sapUiFormResLayout>div {
+    padding: 8rem;
+    box-sizing: content-box;
+    background-color: rgb(158, 250, 253);
+   }
+
+   .sapMLabel {
+    color: #1407d3;
+    font-size: 1rem;
+}
+
+.sapMInputBaseInner {
+    background: transparent;
+    border: none;
+    color: #ed2a4e;
+}
+
+.sapMLIB {
+    align-items: center;
+    position: relative;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.sapMIBar.sapMHeader-CTX {
+    background-color: rgb(230 234 239 / 72%);
+}

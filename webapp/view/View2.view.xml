@@ -1,0 +1,27 @@
+<mvc:View controllerName="splitcontainer.splitcontainerproject.controller.View2" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+    <Page id="page" titleAlignment="Center" title="{i18n>title}">
+        <content>
+            <f:SimpleForm title="Student Details Form:">
+                <f:content>
+                    <Label text="Student Name" />
+                    <Input value="{array2>/0/studname}" width="45%" />
+
+                    <Label text="Reg No" />
+                    <Input value="{array2>/0/regno}" width="45%" />
+
+                    <Label text="Age" />
+                    <Input value="{array2>/0/age}" width="45%" />
+
+                    <Label text="Email" />
+                    <Input value="{array2>/0/email}" width="45%" />
+
+                    <Label text="Mobile No." />
+                    <Input value="{array2>/0/mobile}" width="45%" />
+
+                    <Label text="Address" />
+                    <Input value="{array2>/0/state}" width="45%" />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+    </Page>
+</mvc:View>

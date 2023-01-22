@@ -1,0 +1,28 @@
+{
+  "College1": [
+    {
+      "collegename": "Mangalore University",
+      "collegeid": "101",
+      "dept": "MCA",
+      "library": "lib1",
+      "attendance": "present",
+      "courses": "PG"
+    },
+    {
+      "collegename": "Banglore University",
+      "collegeid": "202",
+      "dept": "BCA",
+      "library": "lib2",
+      "attendance": "present",
+      "courses": "UG"
+    },
+    {
+      "collegename": "Patna University",
+      "collegeid": "303",
+      "dept": "BTECH",
+      "library": "lib3",
+      "attendance": "absent",
+      "courses": "UG"
+    }
+  ]
+}
